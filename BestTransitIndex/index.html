@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>U.S. Public Transit</title>
+      <link rel="stylesheet" href="css/stylin.css">
+    </head>
+    <body>
+      
+      <div id="mySidenav" class="sidenav">
+      
+      <form>
+        <label><input type="radio" name="mode" value="sta" checked> Sort by State</label>
+        <label><input type="radio" name="mode" value="val"> Sort by value</label>
+      </form><br><br>
+
+      <b>Variable weights</b><br>
+      Max_Vehicles
+      <form name="myform" oninput="range10value.value = range10.valueAsNumber">
+        <input type="range" id="range10" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range10value" for="range10" >0.5</output>
+      </form>
+      <span id="sliderOutput10"></span>
+      
+      Monthly_Vehicle_Miles
+      <form name="myform" oninput="range9value.value = range9.valueAsNumber">
+        <input type="range" id="range9" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range9value" for="range9" >0.5</output>
+      </form>
+
+      Monthly_Vehicle_Hours
+      <form name="myform" oninput="range8value.value = range8.valueAsNumber">
+        <input type="range" id="range8" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range8value" for="range8" >0.5</output>
+      </form>
+
+      Average_Fares_Per_Trip
+      <form name="myform" oninput="range7value.value = range7.valueAsNumber">
+        <input type="range" id="range7" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range7value" for="range7" >0.5</output>
+      </form>
+
+      Average_Cost_Per_Trip
+      <form name="myform" oninput="range6value.value = range6.valueAsNumber">
+        <input type="range" id="range6" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range6value" for="range6" >0.5</output>
+      </form>
+      
+      Average_Trip_Length
+      <form name="myform" oninput="range5value.value = range5.valueAsNumber">
+        <input type="range" id="range5" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range5value" for="range5" >0.5</output>
+      </form>
+
+      Unlinked_Passenger_Trips
+      <form name="myform" oninput="range4value.value = range4.valueAsNumber">
+        <input type="range" id="range4" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range4value" for="range4" >0.5</output>
+      </form>
+
+      Passenger_Miles
+      <form name="myform" oninput="range3value.value = range3.valueAsNumber">
+        <input type="range" id="range3" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range3value" for="range3" >0.5</output>
+      </form>
+
+      Service_Area_Population
+      <form name="myform" oninput="range2value.value = range2.valueAsNumber">
+        <input type="range" id="range2" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range2value" for="range2" >0.5</output>
+      </form>
+
+      Service_Area_Size
+      <form name="myform" oninput="range1value.value = range1.valueAsNumber">
+        <input type="range" id="range1" min="-1" max="1" value="0.5" step="0.1" />
+        <output name="range1value" for="range1" >0.5</output>
+      </form>
+      
+
+      <br>
+      <input type="button" id="reset" value="Reset weights" /><br>
+      <input type="button" id="stateSelect" value="Filter states" />
+      <input type="button" id="deselectStates" value="Unselect all" />
+      
+      </div>
+      
+      <div id="chart"></div>
+      
+      <div id="definitions">
+      <h2>Variable definitions</h2>
+
+      <p>
+        <h3 id="r10">Max_Vehicles</h3>
+        <b>Name in data set:</b> vom_ave<br>
+        The number of revenue vehicles operated to meet the annual maximum service requirement. This is the revenue vehicle count during the peak season of the year; on the week and day that maximum service is provided.
+      </p>
+
+      <p>
+        <h3 id="r9">Monthly_Vehicle_Miles</h3>
+        <b>Name in data set:</b> Vehicle.Revenue.miles<br>
+        The miles that vehicles travel while in revenue service. Vehicle revenue miles (VRM) include: Revenue service Actual vehicle revenue miles exclude: Deadhead, Operator training, Maintenance testing, School bus and charter services
+      </p>
+
+      <p>
+        <h3 id="r8">Monthly_Vehicle_Hours</h3>
+        <b>Name in data set:</b> Vehicle.Revenue.Miles<br>
+        The hours that vehicles travel while in revenue service. Vehicle revenue hours (VRH) include: Revenue service, Layover/recovery time.
+      </p>
+
+      <p>
+        <h3 id="r7">Average_Fares_Per_Trip</h3>
+        <b>Name in data set:</b> Average.Fares.per.Trip.FY<br>
+        The ratio of Fares Earned per Unlinked Passenger Trips.
+      </p>
+
+      <p>
+        <h3 id="r6">Average_Cost_Per_Trip</h3>
+        <b>Name in data set:</b> Average.Cost.per.Trip.FY<br>
+        The ratio of Total Operating Expenses per Unlinked Passenger Trips
+      </p>
+
+      <p>
+        <h3 id="r5">Average_Trip_Length</h3>
+        <b>Name in data set:</b> Average.Trip.Length.FY<br>
+        The ratio of Passenger Miles per Unlinked Passenger trips.
+      </p>
+
+      <p>
+        <h3 id="r4">Unlinked_Passenter_Trips</h3>
+        <b>Name in data set:</b> Unlinked.Passenger.Trips.FY<br>
+        The number of passengers who board public transportation vehicles. Passengers are counted each time they board vehicles no matter how many vehicles they use to travel from their origin to their destination.
+      </p>
+
+      <p>
+        <h3 id="r3">Passenger_Miles</h3>
+        <b>Name in data set:</b> Passenger.Miles.FY<br>
+        The sum of the distances ridden by each passenger.
+      </p>
+
+      <p>
+        <h3 id="r2">Service_Area_Population</h3>
+        <b>Name in data set:</b> Service.Area.Population<br>
+        The population of the area served by the property, as reported by the transit property.
+
+      </p>
+
+      <p>
+        <h3 id="r1">Service_Area_Size</h3>
+        <b>Name in data set:</b> Service.Area.SQ.Miles<br>
+        The square miles of the area served by the property, as reported by the transit property. This may include some rural (non-urbanized) areas. 
+      </p>
+
+      </div>
+
+      <div>
+        <h2>About the data</h2>
+        <p>
+          Data were collected from the National Transit Database (NTD) using both annual and monthly data collected through surveys and <a href="https://www.transit.dot.gov/ntd/ntd-data">stored here</a>.<br>
+          A full list of all possible variables and data values can be found in the <a href="https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/NTD_Glossary_2014.pdf">NTD Glossary</a>.<br>
+          Missing data values were remove from the data set and values for states were aggregated as the mean across all transit companies in the state. Monthly values were averaged across months, then across companies.
+        </p>
+      </div>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="http://d3js.org/d3.v3.js" type="text/javascript"></script> -->
+      <script src="scripts/jquery-3.2.1.min.js"></script>
+      <script src="scripts/d3.v3.js" type="text/javascript"></script>
+
+      <script src="scripts/bars.js"></script>
+
+    </body>
+</html>
+

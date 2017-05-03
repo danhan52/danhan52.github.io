@@ -1,0 +1,125 @@
+rect.bordered {
+  stroke: #E6E6E6;
+  stroke-width: 2px;
+}
+
+body {
+  font-size: 9pt;
+  font-family: sans-serif, courier;
+}
+
+text.axis {
+  fill: #000;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.legend line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+div.tooltip { 
+    position: absolute;     
+    text-align: center;     
+    width: 180px;          
+    height: 42px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: lightsteelblue; 
+    border: 0px;    
+    border-radius: 8px;     
+    pointer-events: none;     
+}
+
+.chart {
+  position: absolute;
+  padding-left: 10px;
+}
+
+.sidenav {
+    border-radius: 10px;
+    height: 550px;
+    width: 250px;
+    text-align: left;
+    padding-left: 10px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #eee; /* Light grey */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 10px; /* Place content 60px from the top */
+}
+
+#range1::-moz-range-thumb {
+  background-color: #a6cee3;
+}
+#range2::-moz-range-thumb {
+  background-color: #1f78b4;
+}
+#range3::-moz-range-thumb {
+  background-color: #b2df8a;
+}
+#range4::-moz-range-thumb {
+  background-color: #33a02c;
+}
+#range5::-moz-range-thumb {
+  background-color: #fb9a99;
+}
+#range6::-moz-range-thumb {
+  background-color: #e31a1c;
+}
+#range7::-moz-range-thumb {
+  background-color: #fdbf6f;
+}
+#range8::-moz-range-thumb {
+  background-color: #ff7f00;
+}
+#range9::-moz-range-thumb {
+  background-color: #cab2d6;
+}
+#range10::-moz-range-thumb {
+  background-color: #6a3d9a;
+}
+
+
+#r1 {
+  color: #a6cee3;
+}
+#r2 {
+  color: #1f78b4;
+}
+#r3 {
+  color: #b2df8a;
+}
+#r4 {
+  color: #33a02c;
+}
+#r5 {
+  color: #fb9a99;
+}
+#r6 {
+  color: #e31a1c;
+}
+#r7 {
+  color: #fdbf6f;
+}
+#r8 {
+  color: #ff7f00;
+}
+#r9 {
+  color: #cab2d6;
+}
+#r10 {
+  color: #6a3d9a;
+}
