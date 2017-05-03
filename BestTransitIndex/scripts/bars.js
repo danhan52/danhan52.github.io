@@ -161,8 +161,10 @@ d3.csv("data/da.csv", function(error, data) {
                 var rnam = "range" + j;
                 if ((i+1) === j) {
                     document.getElementById(rnam).value = 1;
+                    document.getElementById("rout"+j).value = 1;
                 } else {
                     document.getElementById(rnam).value = 0;
+                    document.getElementById("rout"+j).value = 0;
                 }
             }
             transitionScale();
@@ -172,8 +174,10 @@ d3.csv("data/da.csv", function(error, data) {
                 var rnam = "range" + j;
                 if ((i+1) === j) {
                     document.getElementById(rnam).value = -1;
+                    document.getElementById("rout"+j).value = -1;
                 } else {
                     document.getElementById(rnam).value = 0;
+                    document.getElementById("rout"+j).value = 0;
                 }
             }
             transitionScale();
